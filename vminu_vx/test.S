@@ -6,7 +6,7 @@
 minu_data_vec_8:
     // mv      a3, a0          # Copy destination
 .loop_8:
-    vsetvli t0, a2, e8,m1   # Vectors of 8b
+    vsetvli t0, a3, e8,m1   # Vectors of 8b
     vle8.v  v1, (a2)        # Load bytes
     add     a2, a2, t0  	# Bump pointer
     sub     a3, a3, t0  	# Decrement count
@@ -23,7 +23,7 @@ minu_data_vec_8:
 #
 minu_data_vec_16:
 .loop_16:
-    vsetvli t0, a2, e16,m1   # Vectors of 8b
+    vsetvli t0, a3, e16,m1   # Vectors of 8b
     slli    t1, t0, 1       # shift 1-bit
     vle16.v v1, (a2)        # Load bytes
     add     a2, a2, t1  	# Bump pointer
@@ -42,7 +42,7 @@ minu_data_vec_16:
 #
 minu_data_vec_32:
 .loop_32:
-    vsetvli t0, a2, e32,m1   # Vectors of 8b
+    vsetvli t0, a3, e32,m1   # Vectors of 8b
     slli    t1, t0, 2       # shift 2-bit
     vle32.v v1, (a2)        # Load bytes
     add     a2, a2, t1  	# Bump pointer
@@ -61,7 +61,7 @@ minu_data_vec_32:
 #
 minu_data_vec_64:
 .loop_64:
-    vsetvli t0, a2, e64,m1   # Vectors of 8b
+    vsetvli t0, a3, e64,m1   # Vectors of 8b
     slli    t1, t0, 3       # shift 3-bit
     vle64.v v1, (a2)        # Load bytes
     add     a2, a2, t1  	# Bump pointer

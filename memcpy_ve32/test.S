@@ -6,7 +6,7 @@
 copy_data_vec:
     mv      a3, a0          # Copy destination
 _loop:
-    vsetvli t0, a2, e32,m1  # Vectors of 8b
+    vsetvli t0, a3, e32,m1  # Vectors of 8b
     slli    t1, t0, 2       # shift 2-bit
     vle32.v v0, (a1)        # Load bytes
     add     a1, a1, t1  	# Bump pointer
